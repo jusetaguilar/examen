@@ -26,6 +26,31 @@ class modelo{
 		
 	}
 	
+	function actualizar ($campos,$id){
+		if($this->conectarnew->conetc() == true){
+			
+			return mysql_query(" UPDATE candidates SET  nombre = '".$campos[0]."', apellido = '".$campos[1]."', telefono = '".$campos[2]."', sexo ='".$campos[3]."' , ciudad = '".$campos[4]."', direccion = '".$campos[5]."', edad = '".$campos[6]."', mail = '".$campos[7]."' WHERE  id = ".$id );
+			
+		}
+		
+		
+	}
+	
+	function eliminar ($id){
+		if( $this->conectarnew->conetc() == true){			
+			return mysql_query(" DELETE from candidates WHERE id = " .$id );			
+		}
+		
+		
+	}
+	
+	function mostrar_cliente($id){
+		if($this->conectarnew->conetc()== true){			
+			return mysql_query("SELECT * FROM candidates WHERE id=".$id);			
+		}		
+		
+	}
+		
 }
 
 
